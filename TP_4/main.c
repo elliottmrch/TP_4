@@ -87,6 +87,28 @@ void ModifGrille(int grille[9][9], int n) {
 	
 }
 
+void Afficher(int grille[9][9], int n) {
+	for (int x = 0; x < n; x++)
+	{
+		printf("|");
+		for (int y = 0; y < n; y++)
+		{
+			if (grille[x][y] == 0) {
+				printf(" |");
+			}
+			else {
+				printf("%d|", grille[x][y]);
+			}
+		}
+		printf("\n");
+		printf(" ");
+		for (int f = 0; f < n; f++) {
+			printf("- ");
+		}
+		printf("\n");
+	}
+}
+
 int main()
 {
 	int grille_facile[9][9] = {
@@ -113,8 +135,9 @@ int main()
 		{8, 4, 0, 3, 0, 1, 0, 5, 9}
 	};
 
-	InitGrille(grille_moyenne, 8);
-	ModifGrille(grille_moyenne, 8);
+	InitGrille(grille_moyenne, 4);
+	ModifGrille(grille_moyenne, 4);
+	Afficher(grille_moyenne, 4);
 
 	return 0;
 }
