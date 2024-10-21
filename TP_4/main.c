@@ -109,6 +109,33 @@ void Afficher(int grille[9][9], int n) {
 	}
 }
 
+void Verification(int grille[9][9], int n) {
+	int verifier = 0;
+	int present = 0;
+	for (int x = 0; x < n; x++)
+	{
+		for (int y = 0; y < n; y++)
+		{
+			if (grille[x][y] < 1 || grille[x][y] > n) {
+				verifier = 1;
+			}
+			if (grille[x][y] == x + 1) {
+				present = 1;
+			}
+			if (grille[x][y] == (x + 1) && present == 1) {
+				verifier = 1;
+			}
+		}
+		
+	}
+	if (verifier == 1) {
+		printf("La grille a un probleme, reverifiez la !");
+	}
+	else {
+		printf("La grille est bonne !");
+	}
+}
+
 int main()
 {
 	int grille_facile[9][9] = {
