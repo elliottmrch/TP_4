@@ -1,3 +1,5 @@
+// NOTE : 10/20
+
 #include <stdio.h>
 
 void InitGrille(int grille[9][9], int n) {
@@ -109,7 +111,7 @@ void Afficher(int grille[9][9], int n) {
 	}
 }
 
-void Verification(int grille[9][9], int n) {
+void Verification(int grille[9][9], int n) { 
 	int verifier = 0;
 	int present = 0;
 	for (int x = 0; x < n; x++)
@@ -119,8 +121,8 @@ void Verification(int grille[9][9], int n) {
 			if (grille[x][y] < 1 || grille[x][y] > n) {
 				verifier = 1;
 			}
-			if (grille[x][y] == x + 1) {
-				present = 1;
+			if (grille[x][y] == x + 1) { // il ne faut pas comparer une valeur dans la grille avec un indice, ils n'ont pas de rapport
+				present = 1; // tu n'en fais rien
 			}
 			if (grille[x][y] == (x + 1) && present == 1) {
 				verifier = 1;
